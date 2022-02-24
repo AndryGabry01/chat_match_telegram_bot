@@ -6,6 +6,6 @@ ls /volume/app -lh
 mkdir -p /volume/app/logs
 chown -R www-data:www-data /volume/app
 chmod -R 775 /volume/app
-usermod -u 1000 www-data
+/sbin/usermod -u 1000 www-data
 
 gunicorn -w 4 -k gevent --bind 0.0.0.0:5000 runserver:app -preload
